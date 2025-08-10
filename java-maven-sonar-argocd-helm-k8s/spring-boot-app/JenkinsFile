@@ -53,6 +53,10 @@ pipeline {
         steps {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
+                    pwd
+                    cd /home
+                    git clone https://github.com/chalapakasrilekha/jenkins.git
+                    cd jenkins
                     git config user.email "chalapakasrilekha@gmail.com"
                     git config user.name "Chalapaka Srilekha"
                     BUILD_NUMBER=${BUILD_NUMBER}
